@@ -147,3 +147,11 @@ MIT
 谢谢
 ---
 Create By phachon
+
+
+## docker安装
+
+```
+docker build -t golang-app .
+docker run -v $PWD/conf/default.conf:/go/src/mm-wiki/conf/mm-wiki.conf -it --rm --name mm-wiki golang-app
+```

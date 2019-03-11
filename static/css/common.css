@@ -446,3 +446,11 @@ ul.countdown li p {
 .view-page-time {
     font-size: 12px;
 }
+
+@media (max-width: 900px) {
+    #navbar .form-group {
+        display: none;
+    }
+}
+
+
