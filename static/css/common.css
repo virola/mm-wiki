@@ -448,8 +448,12 @@ ul.countdown li p {
 }
 
 @media (max-width: 900px) {
-    #navbar .form-group {
+    /* #navbar .form-group {
         display: none;
+    } */
+    .navbar-nav {
+        display: block;
+        clear: both;
     }
 }
 

@@ -2,15 +2,22 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <a class="navbar-brand" href="/">&nbsp;&nbsp;Markdown Mini Wiki</a>
-                <ul class="nav navbar-nav navbar-nav-scroll">
-                    <li {{if eq .navName "main"}}class="active"{{end}}><a href="/"><i class="fa fa-home"></i>&nbsp;主页</a></li>
-                    <li {{if eq .navName "space"}}class="active"{{end}}><a href="/space/index"><i class="fa fa-cube"></i>&nbsp;空间</a></li>
-                    <li {{if eq .navName "user"}}class="active"{{end}}><a href="/user/index"><i class="fa fa-user "></i>&nbsp;用户</a></li>
-                    <li {{if eq .navName "system"}}class="active"{{end}}><a href="/system/main/index"><i class="fa fa-cog"></i>&nbsp;系统</a></li>
-                </ul>
+                
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-nav-scroll">
+                    <li {{if eq .navName "main"}}class="active" {{end}}><a href="/"><i class="fa fa-home"></i>&nbsp;主页</a></li>
+                    <li {{if eq .navName "space"}}class="active" {{end}}><a href="/space/index"><i class="fa fa-cube"></i>&nbsp;空间</a></li>
+                    <li {{if eq .navName "user"}}class="active" {{end}}><a href="/user/index"><i class="fa fa-user "></i>&nbsp;用户</a></li>
+                    <li {{if eq .navName "system"}}class="active" {{end}}><a href="/system/main/index"><i class="fa fa-cog"></i>&nbsp;系统</a></li>
+                </ul>
                 <form class="navbar-form navbar-left" action="#" method="post">
                     <div class="form-group has-feedback">
                         {{/*<i class="glyphicon glyphicon-search form-control-feedback" style="line-height: 32px;"></i>*/}}
