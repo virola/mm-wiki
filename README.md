@@ -129,6 +129,8 @@ MM-Wiki 是站在巨人的肩膀上开发的一款软件，是因为系统中使
 ```
 $ git clone https://github.com/phachon/mm-wiki.git
 $ cd mm-wiki
+$ go get -v ./
+$ go install -v ./
 $ go build ./
 ```
 
@@ -151,7 +153,18 @@ Create By phachon
 
 ## docker安装
 
+1. 将 `conf/default.conf` 拷贝到 `/data/conf/mm-wiki/default.conf` 目录下，修改其中的数据库连接配置、监听端口号。
+2. 创建目录 `/data/git/markdown/data` 用于存放markdown文件。
+
+这两个目录将用挂载的方式映射到docker容器。
+
 ```
-docker build -t golang-app .
-docker run -v $PWD/conf/default.conf:/go/src/mm-wiki/conf/mm-wiki.conf -it --rm --name mm-wiki golang-app
+# build
+docker build --rm -t golang-app .
+
+# run
+docker run \
+    -v /data/conf/mm-wiki/default.conf:/go/src/mm-wiki/conf/mm-wiki.conf:ro \
+    -v /data/git/markdown/data:/data/git/markdown/data:rw \
+    -it -p 8081:8081 -d --restart=always --name mm-wiki golang-app
 ```

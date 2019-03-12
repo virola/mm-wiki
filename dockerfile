@@ -1,9 +1,11 @@
-FROM golang:1.8
+FROM ubuntu:16.04
 
+RUN mkdir -p /go/src/mm-wiki
 WORKDIR /go/src/mm-wiki
 COPY . .
 
-RUN go get -d -v ./
-RUN go install -v ./
+RUN mkdir -p /data/git/markdown/data
 
-CMD ["app"]
+EXPOSE 8081
+
+CMD ["./mm-wiki"]
